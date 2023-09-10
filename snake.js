@@ -13,7 +13,10 @@ const scoreBarContainer=document.getElementById("scoreBarContainer");
 const settings=document.getElementById('settings');
 const foodPickSound=document.getElementById('foodPickSound');
 const gameOverSound=document.getElementById('gameOverSound');
+
 const infoPanel=document.getElementById('infoPanel');
+
+
 
 let horizontal=0;
 let vertical=0;
@@ -462,6 +465,8 @@ function Pause(){
 window.onload =()=>{
     setup();
     OkSettings();
+    OkInfo();
+    SetActiveInfo();
 } 
 window.addEventListener('resize', WindowChange);
 let updateInverval;
@@ -667,7 +672,7 @@ setActiveSettings.addEventListener('click',SetActiveSettings);
 okSettings.addEventListener('click',OkSettings);
 
 function SetActiveSettings(){
-    if(!changeInfo && once){
+    if(!changeInfo && once && !gameOver){
         document.getElementById('settings').style.display='flex'
         changeSettings=true;
         setActiveSettings.style.opacity='0.2';
@@ -737,12 +742,11 @@ okInfo.addEventListener('click',OkInfo)
 changeInfo=false;
 
 function SetActiveInfo(){
-    if(!changeSettings && once){
+    if(!changeSettings && once && !gameOver){
         document.getElementById('infoPanel').style.display='flex'
         changeInfo=true;
         setActiveInfo.style.opacity='0.2';
         setActiveInfo.style.cursor='default'
-        
         setActiveSettings.style.opacity='0.2';
         setActiveSettings.style.cursor='default'
     }
