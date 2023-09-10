@@ -1,4 +1,4 @@
-let canvasSize;
+let canvasSize
 let blockSize;
 const body=document.querySelector("body");
 body.addEventListener("click", ()=>{if(gameOver)Restart();})
