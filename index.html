@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPER CUSTOM SNAKE </title>
+    <link rel="stylesheet" href="snake.css">
+    <link rel="icon" href="./Src/icon.png">
+</head>
+<body>
+    <audio id="foodPickSound" src="./Audio/foodPick.mp3"></audio>
+    <audio id="gameOverSound" src="./Audio/gameOver.mp3"></audio>
+    <div id="utility">
+        <img src="./Src/SettingsLight.png" id="setActiveSettings" >
+        <img src="./Src/FullScreenLight.png" id="FullScreenButton">
+        <img src="./Src/InfoLight.png" id="setActiveInfo">
+        <img src="./Src/OpenUtilityLight.png" id="setActiveUtility">
+    </div>
+
+    <div id="scoreBoard">
+        <h1>Score: 0</h1>
+        <h1>PLEASE MOVE TO START!</h1>
+        <h1>HighScore: 0</h1>
+    </div>
+    <canvas>
+        
+    </canvas>
+    <div id="foodBoard">
+        <h1>Next score </h1>
+        <div id="scoreBarContainer">
+            <div id="scoreBar"></div>
+        </div>
+        <h1>CLICK ANYWHERE TO RESTART !</h1>
+    </div>
+
+    <div id="settings" style="display: none;">
+        <div class="titleContainerSettings">
+            <button id="resetHS">RESET HIGHSCORE</button>
+            <h1>SETTINGS</h1>
+            <button id="okSettings">OK</button>
+        </div>
+        <div id="gameSettings">
+            <div class="settingContainer">
+                <h2 for="blockSizeSet">GAME BLOCK SIZE</h2> 
+                <input type="number" value="5" min="1" max="10" id="blockSizeSet" name="blockSizeSet" oninput="validateInput(this)">
+            </div>
+            <div class="settingContainer">
+                <h2 for="snakeSpeedSet">SNAKE SPEED</h2> 
+                <input type="number" value="10" min="1" max="60" id="snakeSpeedSet" name="snakeSpeedSet" oninput="validateInput(this)">
+            </div>
+            <div class="settingContainer">
+                <h2 for="snakeGrowSpeedSet">SNAKE GROW SPED</h2> 
+                <input type="number" value="1" min="1" max="5" id="snakeGrowSpeedSet" name="snakeGrowSpeedSet" oninput="validateInput(this)">
+            </div>
+            <div class="settingContainer">
+                <h2 for="snakeSizeSet">SNAKE SIZE REDUCTION</h2> 
+                <input type="number" value="0.2" min="0" max="1" id="snakeSizeSet" name="snakeSizeSet" oninput="validateInput(this,false)">
+            </div>
+            <div class="settingContainer">
+                <h2 for="boxMode">BOX MODE</h2> 
+                <input type="checkbox" id="boxMode" name="boxMode">
+            </div>
+            <div class="settingContainer">
+                <h2 for="grid">GRID</h2> 
+                <input type="checkbox" id="grid" name="grid">
+            </div>
+            <div class="settingContainer">
+                <h2 for="darkMode">DARK MODE</h2> 
+                <input type="checkbox" checked id="darkMode" name="darkMode">
+            </div>
+        </div>
+    </div>
+    <div id="infoPanel" style="display: none;">
+        <div class="titleContainerInfo">
+            <h1>SUPER CUSTOM SNAKE</h1>
+            <button id="okInfo">OK</button>
+        </div>
+        <p>Super Custom Snake!<br><br>
+            Dive into the reimagined world of a classic: Super Custom Snake! Weave through the map, seizing treats, and lengthening with every capture. But what sets this version apart? It's a meld of personalization and unpredictability.
+            <br><br>
+            Within Super Custom Snake, every game is a canvas for your creativity:
+            <br><br>
+            Arena Determination: Shape your own battlefield, from intimate challenges to vast expanses. You dictate the scale.
+            <br><br>
+            Control the Momentum: Tailor your snake's speed, from a deliberate crawl to a frenetic dash, to suit your mood or challenge yourself.
+            <br><br>
+            Tail Mastery: Control how swiftly your snake grows after gobbling treats. Fancy a twist? Adjust the size of snake parts for a distinctive look.
+            <br><br>
+            Box Mode Brilliance: Engage in Box Mode for a fresh spin on navigation. A labyrinthine adventure awaits!
+            <br><br>
+            Grid Precision: Add a grid overlay for that strategic edge. Perfect for plotting your path with accuracy.
+            <br><br>
+            Dark Mode Delight: Switch to dark mode for a serene or nighttime gaming experience. Sleek, stylish, and smooth.
+            <br><br>
+            Double or Nothing: The game tosses a coin with every treat appearance, giving you a 50% chance to encounter a regular treat or a double-points delicacy. Are you feeling lucky?
+            <br><br>
+            Super Custom Snake isn't just a game—it's a journey of choices and chances. With an array of settings to fiddle with and the thrill of the unexpected, every session is a brand new escapade. Step in, tailor your experience, and let the unparalleled adventures roll!
+            <br><br>
+            THAT GAME IS COMPATIBLE WITH PC USERS AND MOBILE USERS
+            <br><br><br>
+            KEY BINDS:
+            <br><br>
+            MOVE UP: W/UP ARROW/SWIPE UP
+            <br><br>
+            MOVE DOWN: S/DOWN ARROW/SWIPE DOWN
+            <br><br>
+            MOVE LEFT: A/LEFT ARROW/SWIPE LEFT
+            <br><br>
+            MOVE RIGHT: D/RIGHT ARROW/SWIPE RIGHT
+            <br><br>
+            PAUSE:E/P/RIGHT CTRL/CLICK(TOUCH) CANVAS
+            <br><br>
+            <div style="background-color: black;color: white;width: 100%; text-align: center;font-size: 1rem;font-family: 'Times New Roman', Times, serif;">
+                <h1>StefanIT</h1>
+                <h1>©2023 Super-Custom-Snake</h1>
+            </div>
+        </p>
+    </div>
+
+    <script src="snake.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+@font-face {
+    font-family: "GameFont"; /* Set a name for your font */
+    src: url("Fonts/Games.ttf"); /* Replace this with the actual path to your .otf file */
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overscroll-behavior-y: none;
+}
+canvas{
+    border-radius: 1%;
+    -webkit-border-radius: 1%;
+    -moz-border-radius: 1%;
+    -ms-border-radius: 1%;
+    -o-border-radius: 1%;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+
+#scoreBoard{
+    height:9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.8rem;
+}
+#scoreBoard h1:nth-child(2){
+    animation: bounce 2s ease-in-out infinite;
+    -webkit-animation: bounce 2s ease-in-out infinite;
+    font-style: italic;
+}
+#foodBoard{
+    height: 9%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+#foodBoard > h1:nth-child(3){
+    font-size: 3rem;
+    animation: bounce 1s ease-in-out infinite ;
+    -webkit-animation: bounce 1s ease-in-out infinite ;
+}
+#scoreBarContainer{
+    width: 60%;
+    height: 30%;
+    background-color: white;
+    border: 0.7rem solid black;
+    margin-left:3% ;
+    position:relative;
+
+}
+#scoreBar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #90EE90;
+}
+
+#utility{
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 40rem;
+    height:10rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+.setActiveUtilityFalse{
+    animation: setActiveUtilityFalse 0.2s ease-in-out;
+    -webkit-animation: setActiveUtilityFalse 0.2s ease-in-out;
+}
+.setActiveUtilityTrue{
+    animation: setActiveUtilityTrue 0.2s ease-in-out;
+    -webkit-animation: setActiveUtilityTrue 0.2s ease-in-out;
+}
+#utility img{
+    display: inline-block;
+    max-width: 100%;
+    max-height: 70%;
+    height: auto;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+#utility img:last-child{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    margin-right: 0.3rem;
+}
+
+.arrow-down{
+    display: inline-block;
+    transform: rotate(-90deg);
+}
+
+#settings{
+    width: 96rem;
+    height: 96rem;
+    background-color: #000000;
+    border: 1rem solid white;
+    border-radius: 1rem;
+    position:absolute;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    color:#33FF33 ;
+    font-size: 2.8rem;
+    display: flex;
+    flex-direction: column;  /* This line is added */
+    align-items: center;     /* This line is added to center content horizontally */
+    justify-content: flex-start; /* This will center the content vertically */
+
+}
+.titleContainerSettings{
+    width: 80%;
+    margin-right: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.titleContainerSettings button{
+    width: 10rem;
+    height: 5rem;
+    background-color: #33FF33;
+    font-size: 3rem;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    cursor: pointer;
+}
+#resetHS{
+    width: 20rem;
+    height: 7rem;
+    font-size: 2.5rem;
+}
+.settingContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#gameSettings h2{
+    display: inline-block;
+}
+input[type='number']{
+    width: 10rem;
+    height: 3rem;
+    text-align: center;
+    font-size: 4rem;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    appearance: textfiend;
+    -moz-appearance: textfield;
+}
+input[type='checkbox']{
+    width: 4rem;
+    height: 4rem;
+}
+
+
+#infoPanel{
+    width: 96rem;
+    height: 96rem;
+    background-color: #000000;
+    border: 1rem solid white;
+    border-radius: 1rem;
+    position:absolute;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    color:#33FF33 ;
+    font-size: 2.8rem;
+    display: flex;
+    flex-direction: column;  /* This line is added */
+    align-items: center;     /* This line is added to center content horizontally */
+    justify-content: flex-start; /* This will center the content vertically */
+    overflow-y: auto;
+}
+#infoPanel p{
+    margin: 0 1rem;
+    font-family:'Times New Roman', Times, serif;
+}
+.titleContainerInfo{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.titleContainerInfo button{
+    width: 10rem;
+    height: 5rem;
+    background-color: #33FF33;
+    font-size: 3rem;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    cursor: pointer;
+}
+
+
+html {
+    font-size: 1vh;
+    font-family: "GameFont";
+}
+
+@media screen and (orientation: portrait) {
+    html {
+        font-size: 1vw;
+    }
+}
+
+@keyframes setActiveUtilityFalse{
+    0%{
+        width: 40rem;
+    }
+    100%{
+        width: 10rem;
+    }
+}
+
+@keyframes setActiveUtilityTrue{
+    0%{
+        width: 10rem;
+    }
+    100%{
+        width: 40rem;
+    }
+}
+
+@keyframes bounce {
+    0%{
+        transform: translateY(1rem);
+        -webkit-transform: translateY(1rem);
+        -moz-transform: translateY(1rem);
+        -ms-transform: translateY(1rem);
+        -o-transform: translateY(1rem);
+}
+    50%{
+        transform: translateY(-1rem);
+        -webkit-transform: translateY(-1rem);
+        -moz-transform: translateY(-1rem);
+        -ms-transform: translateY(-1rem);
+        -o-transform: translateY(-1rem);
+}
+    100%{
+        transform: translateY(1rem);
+        -webkit-transform: translateY(1rem);
+        -moz-transform: translateY(1rem);
+        -ms-transform: translateY(1rem);
+        -o-transform: translateY(1rem);
+}
+
+}
+@keyframes bounce2 {
+    0%{
+        transform: translateY(0.3rem);
+        -webkit-transform: translateY(0.3rem);
+        -moz-transform: translateY(0.3rem);
+        -ms-transform: translateY(0.3rem);
+        -o-transform: translateY(0.3rem);
+}
+    50%{
+        transform: translateY(-0.3rem);
+        -webkit-transform: translateY(-0.3rem);
+        -moz-transform: translateY(-0.3rem);
+        -ms-transform: translateY(-0.3rem);
+        -o-transform: translateY(-0.3rem);
+}
+    100%{
+        transform: translateY(0.3rem);
+        -webkit-transform: translateY(0.3rem);
+        -moz-transform: translateY(0.3rem);
+        -ms-transform: translateY(0.3rem);
+        -o-transform: translateY(0.3rem);
+}
+
+}
