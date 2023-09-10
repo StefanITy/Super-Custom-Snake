@@ -745,7 +745,6 @@ function SetActiveInfo(){
         setActiveSettings.style.cursor='default'
     }
 }
-SetActiveInfo();
 
 function OkInfo(){
     document.getElementById('infoPanel').style.display='none' 
