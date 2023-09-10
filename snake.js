@@ -560,16 +560,18 @@ detectSwipe(document.body, function (direction) {
             vertical=0;
             canChangeDir=false;
         }
-        if(direction && once && !canChangeDir){
+        if(direction && once && !canChangeDir && !changeSettings && !changeInfo){
             updateInverval=setInterval(update, 1000/snakeSpeed);
             once=false;
             scoreBoard.children[0].style.display='block';
             scoreBoard.children[1].style.display="none";
             scoreBoard.children[2].style.display="block";
             scoreBoard.style.justifyContent="space-between";
-    
+            
             setActiveSettings.style.opacity='0.2';
             setActiveSettings.style.cursor='default'
+            setActiveInfo.style.opacity='0.2';
+            setActiveInfo.style.cursor='default'
         }
     }
 
